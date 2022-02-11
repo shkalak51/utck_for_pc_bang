@@ -1,0 +1,57 @@
+﻿<Window x:Class="utck_for_pc_bang.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:utck_for_pc_bang"
+        mc:Ignorable="d"
+        x:Name="this_window"
+        Closing="on_closing"
+        ResizeMode="NoResize"
+        
+        Title="스누수강" Height="493" Width="330">
+    <Grid Margin="0,0,0,6">
+        <TextBlock HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" Text="0. 컴퓨터 시간" VerticalAlignment="Top" Width="276" Margin="0,13,0,0" FontWeight="Bold"/>
+        <TextBlock x:Name="box_hour_native" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="49,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="25"/>
+        <TextBlock x:Name="box_min_native" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="92,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="25"/>
+        <TextBlock x:Name="box_sec_native" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="134,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="25"/>
+        <TextBlock x:Name="box_milli_native" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="165,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="49"/>
+        <TextBlock HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="시" VerticalAlignment="Top" Width="18" Margin="74,41,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="분" VerticalAlignment="Top" Width="18" Margin="116,41,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="초" VerticalAlignment="Top" Width="18" Margin="159,41,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="밀리초" VerticalAlignment="Top" Width="43" Margin="214,41,0,0"/>
+
+        <TextBlock HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" Text="1. ntp서버 시간" VerticalAlignment="Top" Width="276" Margin="0,83,0,0" FontWeight="Bold"/>
+        <Button x:Name="button_sync_ntp" Content="동기화" HorizontalAlignment="Left" Margin="49,177,0,0" VerticalAlignment="Top" Width="52" Click="sync_ntp_Click"/>
+        <TextBlock x:Name="diffbox_ntp" HorizontalAlignment="Left" Margin="49,135,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="246"/>
+        <TextBlock x:Name="ntpbox" HorizontalAlignment="Left" Margin="49,156,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="246" FontSize="9"/>
+        <TextBlock x:Name="box_hour_ntp" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="49,111,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="25"/>
+        <TextBlock x:Name="box_min_ntp" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="92,111,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="25"/>
+        <TextBlock x:Name="box_sec_ntp" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="134,111,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="25"/>
+        <TextBlock x:Name="box_milli_ntp" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="165,111,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="49"/>
+        <TextBlock HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="시" VerticalAlignment="Top" Width="18" Margin="74,111,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="분" VerticalAlignment="Top" Width="18" Margin="116,111,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="초" VerticalAlignment="Top" Width="18" Margin="159,111,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="밀리초" VerticalAlignment="Top" Width="43" Margin="214,111,0,0"/>
+        <Button x:Name="button_multi_sync_ntp" Content="연속동기화" HorizontalAlignment="Left" Margin="124,177,0,0" VerticalAlignment="Top" Width="66" Click="multi_sync_ntp_Click"/>
+
+        <TextBlock HorizontalAlignment="Center" Height="23" TextWrapping="Wrap" Text="2. http서버 시간" VerticalAlignment="Top" Width="276" Margin="0,234,0,0" FontWeight="Bold"/>
+        <Button x:Name="button_sync_http" Content="동기화" HorizontalAlignment="Left" Margin="49,360,0,0" VerticalAlignment="Top" Width="52" Click="sync_http_Click"/>
+        <TextBlock x:Name="diffbox_http" HorizontalAlignment="Left" Margin="49,317,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="246"/>
+        <TextBlock x:Name="diffbox_fake" HorizontalAlignment="Left" Margin="49,317,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="246"/>
+        <TextBlock x:Name="httpbox" HorizontalAlignment="Left" Margin="49,338,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="246" FontSize="9"/>
+        <TextBlock x:Name="box_hour_http" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="49,263,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="25"/>
+        <TextBlock x:Name="box_min_http" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="92,263,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="25"/>
+        <TextBlock x:Name="box_sec_http" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="134,263,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="25"/>
+        <TextBlock x:Name="box_milli_http" TextAlignment="Center" HorizontalAlignment="Left" Height="23" Margin="165,263,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="49"/>
+        <TextBlock HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="시" VerticalAlignment="Top" Width="18" Margin="74,263,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="분" VerticalAlignment="Top" Width="18" Margin="116,263,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="초" VerticalAlignment="Top" Width="18" Margin="159,263,0,0"/>
+        <TextBlock HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="밀리초" VerticalAlignment="Top" Width="43" Margin="214,263,0,0"/>
+        <Button x:Name="button_multi_sync_http" Content="연속동기화" HorizontalAlignment="Left" Margin="124,360,0,0" VerticalAlignment="Top" Width="66" Click="multi_sync_http_Click"/>
+
+        <CheckBox x:Name="check_top" Content="항상 위" HorizontalAlignment="Left" Margin="196,417,0,0" VerticalAlignment="Top" Checked="always_on_top" Unchecked="not_on_top"/>
+        <WebBrowser x:Name="user_count" Margin="-334,-266,958,678"/>
+        <TextBox x:Name="http_url" HorizontalAlignment="Left" Margin="49,292,0,0" TextWrapping="Wrap" Text="https://sugang.snu.ac.kr/" VerticalAlignment="Top" Width="246"/>
+    </Grid>
+</Window>
